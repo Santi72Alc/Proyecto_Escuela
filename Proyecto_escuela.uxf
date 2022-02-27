@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>763</x>
+      <y>595</y>
+      <w>210</w>
+      <h>343</h>
+    </coordinates>
+    <panel_attributes>_Profesor_
+--
+id: int codProfesor
+string nombre
+string apellido1
+string apellido2
+int edad
+string asignatura
+
+--
+Profesor()
+Profesor(string nombre, 
+   string apellido1, 
+   string appelido2, 
+   int edad,
+   string asignatura)
+obtenerNombreCompleto(): string
+preguntarEjercicio(int ejercicio): string ??
+@Override toString(): string
+getCodProfesor(): int
+getNombre(): string
+getApellido1(): string
+getApellido2(): string
+getEdad(): int
+getAsignatura(): string
+setCodProfesor(int codProfesor)
+setNombre(string nombre)
+setApellido1(string apellido1)
+setApellido2(string apellido2)
+setEdad(int edad)
+setAsignatura(string asignatura)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>182</x>
+      <y>371</y>
+      <w>189</w>
+      <h>343</h>
+    </coordinates>
+    <panel_attributes>_Alumno_
+--
+id: int codAlumno
+string nombre
+string apellido1
+string apellido2
+byte edad
+Profesor profesor
+
+--
+Alumno()
+Alumno(string nombre, 
+   string apellido1, 
+   string appelido2, 
+   byte edad)
+obtenerNombreCompleto(): string
+obtenerNombreFormato2(): string
+darRespuesta(string respuesta): string
+@Override toString(): string
+getCodAlumno(): int
+getNombre(): string
+getApellido1(): string
+getApellido2(): string
+getEdad(): int
+getProfesor(): Profesor
+setCodAlumno(int codAlumno)
+setNombre(string nombre)
+setApellido1(string apellido1)
+setApellido2(string apellido2)
+setEdad(byte edad)
+setProfesor(Profesor profesor)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1085</x>
+      <y>476</y>
+      <w>147</w>
+      <h>343</h>
+    </coordinates>
+    <panel_attributes>_Aula_
+--
+id: int numero_aula
+string nombre
+int capacidad
+int numero_alumnos
+boolan disponible
+
+--
+Aula()
+Aula(string nombre, 
+   int numero_aula, 
+   int capacidad)
+Aula(string nombre, 
+   int numero_aula, 
+   int capacidad, 
+   boolean disponible)
+ numero_alumnos(): int
+ disponibilidad(): boolean
+ @Override toString(): string
+ getNumero_aula(): int
+ getNombre(): string
+ isDisponible(): boolean
+ getCapacidad(): int
+ getNumero_alumnos(): int
+ setNumero_aula(int numero_aula)
+ setNombre(string nombre)
+ setIsDisponible(boolean disponible)
+ setCapacidad(int capacidad)
+ setNumero_alumnos(int numero_alumnos)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>504</y>
+      <w>147</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>_Asignatura_
+--
+string nombre
+Profesor profesor
+Aula aula
+
+--
+Asignatura()
+Asignatura(string nombre, 
+   Profesor profesor, 
+   Aula aula)
+@Override toString(); string
+getNombre(): string
+getProfesor(): Profesor
+getAula(): Aula
+setNombre(string nombre)
+setProfesor(Profesor profesor)
+setAula(Aula aula)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>504</y>
+      <w>357</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>539</y>
+      <w>105</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>406</x>
+      <y>308</y>
+      <w>182</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>_NotasAlumno_
+--
+Alumno alumno
+Asignatura asignatura
+double nota
+
+--
+NotasAlumno()
+NotasAlumno(Alumno alumno, 
+   Asignatura asignatura,
+   double nota)
+@Override toString(): string
+getAlumno(): Alumno
+getAsignatura(): Asignatura
+getNota(): double
+setAlumno(Alumno alumno)
+setAsignatura(Asignatura asignatura)
+setNota(double double)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>266</x>
+      <y>336</y>
+      <w>154</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>336</y>
+      <w>84</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>98</x>
+      <y>21</y>
+      <w>364</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Se han introducido 5 valores al azar para las pruebas de Profesores, Alumnos, Asignaruras y Aulas para poder ser consultados desde el menú principal.
+
+Los datos de Profesores, Alumnos, Asignaturas y Aulas han sido tratados con hashMap para conseguir un almacenamiento y búsqueda 'unicos', cada uno con sus respectivos 'códigos'. Esto nos permitirá una búsqueda y tramamiento rápido, sin duplicidades y sin errores.
+
+Las 'Notas de alumnos' han sido tratadas con ArrayList porque, de momento, consideramos que pueden haber vários registros que se deben tratar.
+bg=white
+fg=blue
+fontsize=18</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>735</x>
+      <y>91</y>
+      <w>315</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>symbol=usecase
+Escuela 'Tech Dreaming'
+--
+HashMap alumnos
+HashMap profesores
+HashMap aulas
+HashMap asignaturas
+ArraList notasAlumnos
+
+--
+Principal()
+main(string[] args)
+showMenu()
+:
+:
+
+--
+--
+*Opciones de menú*
+1. Visualiza TODOS los alumnos
+2. Visualiza TODOS los profesores
+3. Visualiza TODAS las aulas
+4. Visualiza TODAS las asignaturas
+
+5. Información de una asignatura
+6. Información de un profesor
+7. inforamción de un alumno
+8. Notas de TODAS las asign. de un alumno
+
+Las opciones se han distribuido en diferentes métodos 
+para poder reutilizadas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>1064</x>
+      <y>49</y>
+      <w>42</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Actor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>889</x>
+      <y>0</y>
+      <w>140</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Selecciona opciones
+deseadas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>994</x>
+      <y>35</y>
+      <w>91</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>35</y>
+      <w>133</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>168</y>
+      <w>245</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;180.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>273</x>
+      <y>140</y>
+      <w>476</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;290.0;410.0;100.0;660.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>231</y>
+      <w>105</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;360.0;10.0;80.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1043</x>
+      <y>252</y>
+      <w>126</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>160.0;290.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>868</x>
+      <y>406</y>
+      <w>35</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;230.0;30.0;10.0</additional_attributes>
+  </element>
+</diagram>
